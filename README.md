@@ -16,5 +16,5 @@
 
 ### Wifi management:
 - Change the name of home_network_name in wifi.lua to your personal WiFi network.
-- This script will switch off the volume of computer when it get's disconnected to the home WiFi network.
+- This script will switch off the volume of computer when it get's disconnected from the home WiFi network.
 - When the computer get's reconnected again the volume is set to 25.
