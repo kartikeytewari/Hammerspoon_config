@@ -18,3 +18,9 @@
 - Change the name of home_network_name in wifi.lua to your personal WiFi network.
 - This script will switch off the volume of computer when it get's disconnected from the home WiFi network.
 - When the computer get's reconnected again the volume is set to 25.
+
+### Bluetooth management:
+- Change the SSID of bluetooth_headphone_ssid in bluetooth.lua to your personal bluetooth headphone SSID.
+- This script will switch off the volume of computer when it get's disconnected from the bluetooth headphone.
+- When the computer get's reconnected again the volume is set to 25.
+- This would require `blueutil` to be preinstalled. Use `brew install blueutil` to install it.
