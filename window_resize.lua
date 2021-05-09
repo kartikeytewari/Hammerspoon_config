@@ -1,83 +1,11 @@
--- move current app to left
-hs.hotkey.bind({"alt", "cmd"}, "Left", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-  
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w / 2
-    f.h = max.h
-    win:setFrame(f)
-  end)
+-- half of screen
+hs.hotkey.bind({'cmd', 'ctrl'}, 'left', function() hs.window.focusedWindow():moveToUnit({0, 0, 0.5, 1}) end)
+hs.hotkey.bind({'cmd', 'ctrl'}, 'right', function() hs.window.focusedWindow():moveToUnit({0.5, 0, 0.5, 1}) end)
+hs.hotkey.bind({'cmd', 'ctrl'}, 'up', function() hs.window.focusedWindow():moveToUnit({0, 0, 1, 0.5}) end)
+hs.hotkey.bind({'cmd', 'ctrl'}, 'down', function() hs.window.focusedWindow():moveToUnit({0, 0.5, 1, 0.5}) end)
 
--- move current app to right
-hs.hotkey.bind({"alt", "cmd"}, "Right", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w / 2)
-    f.y = max.y
-    f.w = max.w / 2
-    f.h = max.h
-    win:setFrame(f)
-end)
-
--- move current app to top
-hs.hotkey.bind({"alt", "cmd"}, "Up", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w 
-    f.h = max.h / 2
-    win:setFrame(f)
-end)
-
--- move current app to bottom
-hs.hotkey.bind({"alt", "cmd"}, "Down", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x
-    f.y = max.y + (max.h / 2)
-    f.w = max.w
-    f.h = max.h / 2
-    win:setFrame(f)
-end)
-
--- move current app to fullscreen
-hs.hotkey.bind({"alt", "cmd"}, "F", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w
-    f.h = max.h
-    win:setFrame(f)
-end)
-
--- move current app to mid
-hs.hotkey.bind({"alt", "cmd"}, "M", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.w/10
-    f.y = max.h/10
-    f.w = 4*max.w/5
-    f.h = 4*max.h/5
-    win:setFrame(f)
-end)
+-- mid of screen
+-- small
+hs.hotkey.bind({'cmd', 'ctrl'}, 'M', function() hs.window.focusedWindow():moveToUnit({0.15, 0.1, 0.7, 0.8}) end)
+-- large
+hs.hotkey.bind({'cmd', 'ctrl'}, 'N', function() hs.window.focusedWindow():moveToUnit({0.06, 0.04, 0.88, 0.9}) end)
